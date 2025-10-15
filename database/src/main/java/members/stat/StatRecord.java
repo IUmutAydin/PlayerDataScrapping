@@ -120,10 +120,6 @@ public class StatRecord {
 		return endY;
 	}
 
-	public void setEndY(double endY) {
-		this.endY = endY;
-	}
-
 	public void setEndY(int endY) {
 		this.endY = endY;
 	}

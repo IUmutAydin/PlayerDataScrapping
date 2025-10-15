@@ -24,21 +24,21 @@ public class TeamPage extends BasePage {
 	private List<String> possibleFullTeamNames;
 	private Queue<String> nextPlayers;
 
-	private By teamName = By.xpath("//*[contains(@id, 'post-')]/header/div/div[2]/h1/a");
+	private By teamName = By.xpath("//*[contains(@id, \'post-')]/header/div/div[2]/h1/a");
 	private By abbreviatedTeamName = By.xpath(
-			"//*[contains(@id, 'post-')]/descendant::td[contains(@style, 'background-color: rgb(99, 39, 198)')]/a/span");
+			"//*[contains(@id, \'post-')]/descendant::td[contains(@style, \'background-color: rgb(99, 39, 198)\')]/a/span");
 	private By fullTeamName = By
-			.xpath("//*[contains(@id, 'Opta_0')]/div/div[1]/table/tbody/tr[1]/td[starts-with(@class, 'Opta-Team')]");
-	private By teamIconURL = By.xpath("//*[contains(@id, 'post-')]/header/div/div[1]/a/img");
-	private By match1 = By.xpath("//*[contains(@id, 'post-')]/div[1]/div[3]/div/div/div[2]/div/div[1]/a[1]");
-	private By match2 = By.xpath("//*[contains(@id, 'post-')]/div[1]/div[3]/div/div/div[2]/div/div[1]/a[2]");
+			.xpath("//*[contains(@id, \'Opta_0\')]/div/div[1]/table/tbody/tr[1]/td[starts-with(@class, \'Opta-Team\')]");
+	private By teamIconURL = By.xpath("//*[contains(@id, \'post-')]/header/div/div[1]/a/img");
+	private By match1 = By.xpath("//*[contains(@id, \'post-')]/div[1]/div[3]/div/div/div[2]/div/div[1]/a[1]");
+	private By match2 = By.xpath("//*[contains(@id, \'post-')]/div[1]/div[3]/div/div/div[2]/div/div[1]/a[2]");
 	private By iFrame = By.xpath("/html/body/article/div/div[2]/iframe");
 	// private By statsOption = By.xpath("//*[contains(@id,
-	// 'post-')]/header/nav/ul/li[2]/a");
-	private By squadOption = By.xpath("//*[contains(@id, 'post-')]/header/nav/ul/li[3]/a");
+	// \'post-')]/header/nav/ul/li[2]/a");
+	private By squadOption = By.xpath("//*[contains(@id, \'post-')]/header/nav/ul/li[3]/a");
 	// private By playerList = By.xpath("//*[contains(@id,
-	// 'post-')]/div/div/div/div/descendant::table/tbody/tr/td[1]/descendant::a");
-	private By playerList1 = By.xpath("//*[contains(@id, 'post-')]/div/div/div/div/div/div[2]/a");
+	// \'post-')]/div/div/div/div/descendant::table/tbody/tr/td[1]/descendant::a");
+	private By playerList1 = By.xpath("//*[contains(@id, \'post-')]/div/div/div/div/div/div[2]/a");
 
 	public TeamPage() {
 		super();

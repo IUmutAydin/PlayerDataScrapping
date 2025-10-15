@@ -19,18 +19,18 @@ public class PlayerPage extends BasePage {
 
 	private String teamName;
 
-	private By playerName = By.xpath("//*[contains(@id, 'post-')]/div[1]/div[1]/div/div/div/div[1]/div[2]");
-	private By playerName1 = By.xpath("//*[contains(@id, 'post-')]/header/div/div[2]/h1/a");
-	private By dob = By.xpath("//*[contains(@id, 'post-')]/div[1]/div[1]/div/div/div/div[2]/div[2]");
-	private By teamName1 = By.xpath("//*[contains(@id, 'post-')]/div[1]/div[1]/div/div/div/div[4]/div[2]/a/span");
-	private By teamURL = By.xpath("//*[contains(@id, 'post-')]/div[1]/div[1]/div/div/div/div[4]/div[2]/a");
+	private By playerName = By.xpath("//*[contains(@id, \'post-')]/div[1]/div[1]/div/div/div/div[1]/div[2]");
+	private By playerName1 = By.xpath("//*[contains(@id, \'post-')]/header/div/div[2]/h1/a");
+	private By dob = By.xpath("//*[contains(@id, \'post-')]/div[1]/div[1]/div/div/div/div[2]/div[2]");
+	private By teamName1 = By.xpath("//*[contains(@id, \'post-')]/div[1]/div[1]/div/div/div/div[4]/div[2]/a/span");
+	private By teamURL = By.xpath("//*[contains(@id, \'post-')]/div[1]/div[1]/div/div/div/div[4]/div[2]/a");
 	private By teamNameWithoutURL = By
-			.xpath("//*[contains(@id, 'post-')]/div[1]/div[1]/div/div/div/div[4]/div[2]/span");
-	private By associationName = By.xpath("//*[contains(@id, 'post-')]/div[1]/div[1]/div/div/div/div[5]/div[2]/span");
+			.xpath("//*[contains(@id, \'post-')]/div[1]/div[1]/div/div/div/div[4]/div[2]/span");
+	private By associationName = By.xpath("//*[contains(@id, \'post-')]/div[1]/div[1]/div/div/div/div[5]/div[2]/span");
 	private By associationIconURL = By
-			.xpath("//*[contains(@id, 'post-')]/div[1]/div[1]/div/div/div/div[5]/div[2]/span/img");
-	private By position = By.xpath("//*[contains(@id, 'post-')]/div[1]/div[1]/div/div/div/div[6]/div[2]");
-	private By noDataText = By.xpath("//*[contains(@id, 'post-')]/div[1]/div[2]/div/p");
+			.xpath("//*[contains(@id, \'post-')]/div[1]/div[1]/div/div/div/div[5]/div[2]/span/img");
+	private By position = By.xpath("//*[contains(@id, \'post-')]/div[1]/div[1]/div/div/div/div[6]/div[2]");
+	private By noDataText = By.xpath("//*[contains(@id, \'post-')]/div[1]/div[2]/div/p");
 	private By noDataText1 = By.xpath("//*[@id=\"content\"]/h1");
 
 	public PlayerPage(String teamName) {

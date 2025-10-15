@@ -47,20 +47,20 @@ public class MatchPage extends BasePage {
 	private By lineups = By.xpath("/html/body/div[1]/div[3]/ul/li[1]");
 	private By statRecords = By.xpath("/html/body/div[1]/div[3]/ul/li[3]");
 	private By xgMap = By.xpath("/html/body/div[1]/div[3]/ul/li[5]");
-	private By statTypes = By.xpath("//*[contains(@id, 'Opta_')]/div/div/div[1]/div/ul/li/span[1]");
-	private By teamDatas = By.xpath("//*[contains(@id, 'Opta_')]/div/div[1]/table/tbody/tr[1]");
-	private By matchDate = By.xpath("//*[contains(@id, 'Opta_')]/div/div[1]/table/tbody/tr[3]/td/div/span[2]");
-	private By matchDate1 = By.xpath("//*[contains(@id, 'Opta_')]/div/div[1]/table/tbody/tr[2]/td/div/span[2]");
-	private By additionalDatas = By.xpath("//*[contains(@id, 'Opta_')]/div/div[1]/div[1]");
+	private By statTypes = By.xpath("//*[contains(@id, \'Opta_\')]/div/div/div[1]/div/ul/li/span[1]");
+	private By teamDatas = By.xpath("//*[contains(@id, \'Opta_\')]/div/div[1]/table/tbody/tr[1]");
+	private By matchDate = By.xpath("//*[contains(@id, \'Opta_\')]/div/div[1]/table/tbody/tr[3]/td/div/span[2]");
+	private By matchDate1 = By.xpath("//*[contains(@id, \'Opta_\')]/div/div[1]/table/tbody/tr[2]/td/div/span[2]");
+	private By additionalDatas = By.xpath("//*[contains(@id, \'Opta_\')]/div/div[1]/div[1]");
 
 	private By homeTeamPlayerList = By
-			.xpath("//*[contains(@id, 'Opta_')]/div/div/div/div/table/tbody/tr/td[1]/table/tbody");
+			.xpath("//*[contains(@id, \'Opta_\')]/div/div/div/div/table/tbody/tr/td[1]/table/tbody");
 	private By awayTeamPlayerList = By
-			.xpath("//*[contains(@id, 'Opta_')]/div/div/div/div/table/tbody/tr/td[2]/table/tbody");
+			.xpath("//*[contains(@id, \'Opta_\')]/div/div/div/div/table/tbody/tr/td[2]/table/tbody");
 
-	private By firstHalf = By.xpath("//*[contains(@id, 'Opta_')]/div/div/div[2]/div[2]/div[2]/div/div[4]/button[2]");
+	private By firstHalf = By.xpath("//*[contains(@id, \'Opta_\')]/div/div/div[2]/div[2]/div[2]/div/div[4]/button[2]");
 	private By additionalTime = By.xpath(
-			"//*[contains(@id, 'Opta_')]/div/div/div[2]/div[2]/div[2]/div/div[2]//*[local-name() = 'svg']//*[local-name() = 'g'][2]//*[local-name() = 'text']");
+			"//*[contains(@id, \'Opta_\')]/div/div/div[2]/div[2]/div[2]/div/div[2]//*[local-name() = \'svg\']//*[local-name() = \'g\'][2]//*[local-name() = \'text\']");
 
 	public MatchPage() {
 		super();
@@ -196,11 +196,11 @@ public class MatchPage extends BasePage {
 		waitUntilVisibleThenScroll(10, homeTeamPlayerList);
 
 		List<Integer> playerShirtList = find(homeTeamPlayerList)
-				.findElements(By.xpath(".//tr[contains(@class, 'Opta-Player')]/td[contains(@class, 'Opta-Shirt')]"))
+				.findElements(By.xpath(".//tr[contains(@class, \'Opta-Player\')]/td[contains(@class, \'Opta-Shirt\')]"))
 				.stream().map(playerShirt -> getShirtNumber(playerShirt)).toList();
 
 		List<String> playerNameList = find(homeTeamPlayerList)
-				.findElements(By.xpath(".//tr[contains(@class, 'Opta-Player')]/td[2]")).stream()
+				.findElements(By.xpath(".//tr[contains(@class, \'Opta-Player\')]/td[2]")).stream()
 				.map(player -> getName(player.getText())).toList();
 
 		Map<Integer, String> playerDataSet = IntStream.range(0, playerNameList.size()).boxed()
@@ -221,11 +221,11 @@ public class MatchPage extends BasePage {
 		waitUntilVisibleThenScroll(10, awayTeamPlayerList);
 
 		List<Integer> playerShirtList = find(awayTeamPlayerList)
-				.findElements(By.xpath(".//tr[contains(@class, 'Opta-Player')]/td[contains(@class, 'Opta-Shirt')]"))
+				.findElements(By.xpath(".//tr[contains(@class, \'Opta-Player\')]/td[contains(@class, \'Opta-Shirt\')]"))
 				.stream().map(playerShirt -> getShirtNumber(playerShirt)).toList();
 
 		List<String> playerNameList = find(awayTeamPlayerList)
-				.findElements(By.xpath(".//tr[contains(@class, 'Opta-Player')]/td[2]")).stream()
+				.findElements(By.xpath(".//tr[contains(@class, \'Opta-Player\')]/td[2]")).stream()
 				.map(player -> getName(player.getText())).toList();
 
 		Map<Integer, String> playerDataSet = IntStream.range(0, playerNameList.size()).boxed()
@@ -259,18 +259,18 @@ public class MatchPage extends BasePage {
 	}
 
 	public String getName(String playerName) {
-		playerName = playerName.replaceAll("(?<=\\p{L})'", "_");
-		playerName = playerName.replaceAll("'", "");
-		playerName = playerName.replaceAll("[^\\p{L}\\s.\\-_]", "");
-		playerName = playerName.replaceAll("_", "'").trim();
-		playerName = playerName.replaceAll("[^a-zA-Z\\-.'%]", "%").trim();
+		playerName = playerName.replaceAll("(?<=\\\p{L})\'", "_");
+		playerName = playerName.replaceAll("\'", "");
+		playerName = playerName.replaceAll("[^\\\p{L}\\\s.\\-_]", "");
+		playerName = playerName.replaceAll("_", "\'").trim();
+		playerName = playerName.replaceAll("[^a-zA-Z\\-.\'%]", "%").trim();
 
 		return playerName;
 	}
 
 	public int parseMinute(String time) {
 		time.trim();
-		time = time.replace("'", "");
+		time = time.replace("\'", "");
 		if (time.contains("+")) {
 			String[] parts = time.split("\\+");
 			int regular = Integer.parseInt(parts[0].trim());
@@ -282,7 +282,7 @@ public class MatchPage extends BasePage {
 	}
 
 	public int getHalf(String time) {
-		time = time.replace("'", "");
+		time = time.replace("\'", "");
 		if (!time.contains("+")) {
 			time = time.replaceAll("[^0-9]", "").trim();
 
@@ -296,7 +296,7 @@ public class MatchPage extends BasePage {
 	}
 
 	public int getAdditionalTime(String time) {
-		time = time.replace("'", "");
+		time = time.replace("\'", "");
 		if (time.contains("+")) {
 			String extraTime = time.split("\\+")[1].split(":")[0];
 
@@ -364,7 +364,7 @@ public class MatchPage extends BasePage {
 		String trimmedDate = date.replaceFirst("^[A-Za-z]+ ", "");
 
 		DateTimeFormatter formatter = new DateTimeFormatterBuilder().appendValue(ChronoField.DAY_OF_MONTH)
-				.appendLiteral(' ').appendPattern("MMMM yyyy").toFormatter(Locale.ENGLISH)
+				.appendLiteral(\' \').appendPattern("MMMM yyyy").toFormatter(Locale.ENGLISH)
 				.withResolverStyle(ResolverStyle.SMART);
 		LocalDate localDate = LocalDate.parse(trimmedDate, formatter);
 

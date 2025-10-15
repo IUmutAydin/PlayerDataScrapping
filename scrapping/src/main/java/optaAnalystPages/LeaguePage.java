@@ -20,21 +20,21 @@ public class LeaguePage extends BasePage {
 
 	private Queue<String> nextTeams;
 
-	private By leagueName = By.xpath("//*[contains(@id, 'post-')]/header/div/div[2]/h1/a");
-	private By leagueIconURL = By.xpath("//*[contains(@id, 'post-')]/header/div/div[1]/a/img");
+	private By leagueName = By.xpath("//*[contains(@id, \'post-')]/header/div/div[2]/h1/a");
+	private By leagueIconURL = By.xpath("//*[contains(@id, \'post-')]/header/div/div[1]/a/img");
 	private By teamsButton = By.id("teams");
 	private By orderByNameButton = By
-			.xpath("//*[contains(@id, 'post-')]/div/div/div/div/div[4]/div/div[4]/div[1]/table/thead/tr/th[1]");
-	private By teamList = By.xpath("//*[contains(@id, 'post-')]/descendant::table/tbody/tr/descendant::a");
-	private By fixture = By.xpath("//*[contains(@id, 'post-')]/header/nav/ul/li[6]/a");
-	private By calendarButton = By.xpath("//*[contains(@id, 'post-')]/div/div/div/div/div[1]/div/div/div[1]/button[2]");
+			.xpath("//*[contains(@id, \'post-')]/div/div/div/div/div[4]/div/div[4]/div[1]/table/thead/tr/th[1]");
+	private By teamList = By.xpath("//*[contains(@id, \'post-')]/descendant::table/tbody/tr/descendant::a");
+	private By fixture = By.xpath("//*[contains(@id, \'post-')]/header/nav/ul/li[6]/a");
+	private By calendarButton = By.xpath("//*[contains(@id, \'post-')]/div/div/div/div/div[1]/div/div/div[1]/button[2]");
 	private By backMonthButton = By
-			.xpath("//*[contains(@id, 'post-')]/div/div/div/div/div[1]/div/div/div[2]/div/div/button[1]");
+			.xpath("//*[contains(@id, \'post-')]/div/div/div/div/div[1]/div/div/div[2]/div/div/button[1]");
 	private By firstMatchDay = By.xpath(
-			"//*[contains(@id, 'post-')]/div/div/div/div/div[1]/div/div/div[2]/div/table/tbody/tr/td[contains(@class, 'matchday')]");
-	private By nextMatchDay = By.xpath("//*[contains(@id, 'post-')]/div/div/div/div/div[1]/div/div/div[1]/button[3]");
-	private By matches = By.xpath("//*[contains(@id, 'post-')]/div/div/div/div/div[2]/div/div/a");
-	private By matchDate = By.xpath("//*[contains(@id, 'post-')]/div/div/div/div/div[1]/div/div/div[1]/button[2]/div");
+			"//*[contains(@id, \'post-')]/div/div/div/div/div[1]/div/div/div[2]/div/table/tbody/tr/td[contains(@class, \'matchday')]");
+	private By nextMatchDay = By.xpath("//*[contains(@id, \'post-')]/div/div/div/div/div[1]/div/div/div[1]/button[3]");
+	private By matches = By.xpath("//*[contains(@id, \'post-')]/div/div/div/div/div[2]/div/div/a");
+	private By matchDate = By.xpath("//*[contains(@id, \'post-')]/div/div/div/div/div[1]/div/div/div[1]/button[2]/div");
 
 	public LeaguePage() {
 		super();
